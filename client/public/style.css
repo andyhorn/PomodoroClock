@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  input[type="checkbox"] {
+      cursor: pointer;
+  }
+  button {
+    border: none;
+    border-radius: 10px;
+    margin: 0 5px;
+    padding: 5px;
+    color: #114B5F;
+    font-size: 1em;
+    background-color: #EDDDD4;
+    height: inherit;
+    box-shadow: 2px 2px 2px black;
+    transition: translateY 0.25s;
+    transition: box-shadow 0.25s;
+  }
+  button:active {
+    box-shadow: 1px 1px 1px black;
+    transform: translateY(2px);
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  .play {
+    box-shadow: inset 1px 1px 3px 1px black !important;
+    transform: translateY(3px) !important;
+    border: none !important;
+  }
+  .modal button.close {
+      box-shadow: none;
+  }
+  #settingsButton {
+      display: flex;
+  }
+  h1 {
+    font-size: 4em;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+  }
+  
+  .col {
+      display: flex;
+      flex-direction: column;
+  }
+  .col.left {
+      align-content: flex-start;
+      align-items: flex-start;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6F9283;
+    color: #EDDDD4;
+    font-family: "Indie Flower", cursive;
+  }
+  .modal-content {
+      border: 2px solid #EDDDD4 !important;
+      border-radius: 15px !important;
+  }
+  .modal-content {
+      background-color: #6F9283 !important;
+      text-align: left;
+  }
+  .modal-body {
+      display: flex;
+      flex-direction: column;
+  }
+  .modal-body div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+  
+  #settingsButton {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+  }
+  
+  .volume {
+      max-width: 65px;
+  }
+  
+  #clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    background-color: #6F9283;
+    border: 2px solid #EDDDD4;
+    border-radius: 15px;
+    margin: 25px;
+  }
+  
+  #controls {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  #controls button {
+      margin: 0 10px;
+  }
+  
+  #settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*justify-content: space-between;*/
+    margin: 25px 0;
+    width: 100%;
+  }
+  
+  #toggles {
+      display: flex;
+      justify-content: space-between;
+  }
+  #toggles div, #toggles input {
+      margin: 10px;
+  }
+  
+  #timer {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 2px solid #EDDDD4;
+    width: 100%;
+    align-self: center;
+  }
+  
+  .number {
+    font-family: "Dancing Script", arial;
+    font-size: 1.5em;
+  }
+  
+  .session-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .setting-frame {
+    margin: 0 10px;
+  }
+  
+  .warning {
+    background-color: #A50104;
+    color: #EDDDD4;
+  }
