@@ -8,7 +8,6 @@ const Range = ({ label, value, onRangeChange }) => (
             name={label}
             value={value}
             onChange={onRangeChange}
-            
         />
     </div>
 );
