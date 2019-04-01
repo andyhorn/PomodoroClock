@@ -8,8 +8,10 @@ class Audio extends React.Component {
                     ref={this.props.reference}
                     src={this.props.source}
                     controls={true}
+                    muted={'muted'}
                     autoPlay={this.props.autoplay}
                     preload={this.props.preload}
+                    type="audio/mpeg"
                 />
             )
         } else {
@@ -17,8 +19,10 @@ class Audio extends React.Component {
                 <audio
                     ref={this.props.reference}
                     src={this.props.source}
+                    muted={'muted'}
                     autoPlay={this.props.autoplay}
                     preload={this.props.preload}
+                    type="audio/mpeg"
                 />
             )
         }

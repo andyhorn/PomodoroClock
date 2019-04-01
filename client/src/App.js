@@ -6,6 +6,7 @@ import Range from './Range';
 import Modal from './Modal';
 import SettingFrame from './SettingFrame';
 import Timer from './Timer';
+import wavFile from './BeepSound.wav';
 
 const MAX_TIME = 3600;
 const TIMEOUT = 100;
@@ -13,7 +14,7 @@ var timeout;
 const DEFAULT_STATE = {
   breakSeconds: 300,
   workSeconds: 1500,
-  alarmUrl: './BeepSound.wav',
+  alarmUrl: wavFile,
   currentSession: 'Session',
   currentTime: 1500,
   interval: '',
@@ -58,6 +59,8 @@ class Clock extends Component {
 		//console.log("Audio button clicked");
 		this.setState({
 			playAudio : this.state.playAudio ? false : true
+		}, () => {
+			this.state.audio.current.muted = !this.state.playAudio;
 		});
 	}
 	
@@ -73,6 +76,9 @@ class Clock extends Component {
 		//console.log(e.target.value);
 		this.setState({
 			volume: e.target.value / 100
+		}, () => {
+			let audio = this.state.audio.current;
+			audio.volume = this.state.volume;
 		});		
 	}
   
@@ -189,10 +195,22 @@ class Clock extends Component {
   
   	soundAlarm() {
 		if (this.state.playAudio) {
+			console.log('audio enabled');
 			let audio = this.state.audio.current;
-			audio.volume = this.state.volume;
+			console.log(audio);
+			//audio.volume = this.state.volume;
+			console.log('volume: ' + audio.volume);
 			audio.currentTime = 0.25;
-			audio.play();
+			console.log('currentTime: ' + audio.currentTime);
+			console.log('playing audio...');
+			audio.muted = false;
+			let promise = audio.play();
+			if (promise != undefined && promise != null) {
+				promise.catch((e) => {
+					console.log(e);
+					audio.play();
+				})
+			}
 		}
   	}
 	
