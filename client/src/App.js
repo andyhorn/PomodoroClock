@@ -195,19 +195,12 @@ class Clock extends Component {
   
   	soundAlarm() {
 		if (this.state.playAudio) {
-			console.log('audio enabled');
 			let audio = this.state.audio.current;
-			console.log(audio);
-			//audio.volume = this.state.volume;
-			console.log('volume: ' + audio.volume);
 			audio.currentTime = 0.25;
-			console.log('currentTime: ' + audio.currentTime);
-			console.log('playing audio...');
 			audio.muted = false;
 			let promise = audio.play();
 			if (promise != undefined && promise != null) {
 				promise.catch((e) => {
-					console.log(e);
 					audio.play();
 				})
 			}
